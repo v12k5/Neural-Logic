@@ -1,85 +1,93 @@
-🔗 Neural Logic: Simulating Digital Circuits with Neural Networks
+Neural Logic: Simulating Digital Circuits with Neural Networks
+This project demonstrates the simulation of fundamental digital logic gates (AND, OR, NAND, XOR, XNOR) using Multi-Layer Perceptrons (MLPs). By training neural networks to replicate gate behavior, the project showcases their ability to compose complex circuits, such as full adders and full subtractors, highlighting the intersection of neural networks and classical digital logic.
+Project Structure
+The repository is organized as follows:
 
-This project demonstrates how a Multi-Layer Perceptron (MLP) can be trained to mimic fundamental digital logic gates (e.g., AND, OR, NAND, XOR, XNOR). These neural gates are then composed to build more complex circuits such as full adders and full subtractors—showcasing how neural networks can simulate digital logic.
+mlp.py: Implements the core MLP with forward propagation, backpropagation, training, and prediction functions.
+make_models.py: Trains MLPs for logic gates and saves them as .pkl files in the models/ directory.
+eval_models.py: Loads trained models and generates truth tables to verify gate behavior.
+circuits.py: Constructs and simulates full adder and full subtractor circuits using trained neural gates.
+models/: Stores trained gate models as .pkl files.
 
-📂 Project Structure
-├── mlp.py          # Core MLP implementation (forward/backprop, training, prediction)
-├── make_models.py  # Trains MLPs for logic gates & saves models into 'models/' folder
-├── eval_models.py  # Loads trained models & prints truth tables for verification
-├── circuits.py     # Demonstrates Full Adders & Full Subtractors using trained gates
-└── models/         # Directory where trained gate models (.pkl) are stored
+Features
 
-⚡ Features
+Neural Gate Simulation: Trains MLPs to accurately emulate AND, OR, NAND, XOR, and XNOR gates.
+Truth Table Verification: Evaluates trained models by generating truth tables for correctness.
+Complex Circuit Composition: Combines neural gates to simulate full adders and subtractors.
+Modular Design: Extensible architecture for integrating additional circuits or gates.
 
-✅ Train neural networks to behave like logic gates
+Getting Started
+Prerequisites
 
-✅ Verify gate behavior by printing truth tables
+Python 3.8 or higher
+NumPy (pip install numpy)
 
-✅ Combine gates to build full adder and full subtractor circuits
+Usage
 
-✅ Modular design for extensibility (add more circuits easily)
-
-🚀 How to Use
-1️⃣ Train the Models
-
-Run the script below to train MLPs for AND, OR, NAND, XOR, and XNOR gates.
-This creates the models/ directory and stores trained models as .pkl files.
-
+Train the ModelsExecute the following command to train MLPs for the logic gates. This will create the models/ directory and save the trained models as .pkl files:
 python make_models.py
 
-2️⃣ Evaluate the Gates
 
-To check correctness, print truth tables of the trained gates:
-
+Evaluate the GatesVerify the correctness of trained gates by generating their truth tables:
 python eval_models.py
 
 
-✔️ This helps verify if the neural networks have learned the correct gate logic.
-
-3️⃣ Run Complex Circuits
-
-Finally, run the full adder and full subtractor circuits:
-
+Simulate Complex CircuitsRun the full adder and full subtractor circuits to observe their behavior:
 python circuits.py
 
 
-✔️ Outputs binary addition and subtraction results simulated using neural gates.
 
-📊 Example Output
+Example Output
+Truth Table (XOR Gate):
 
-Truth Table (XOR):
 
-A B | OUT
----------
-0 0 | 0
-0 1 | 1
-1 0 | 1
-1 1 | 0
+
+A
+B
+Output
+
+
+
+0
+0
+0
+
+
+0
+1
+1
+
+
+1
+0
+1
+
+
+1
+1
+0
 
 
 Full Adder (XOR-based):
-
 Inputs: A=1, B=1, Cin=0
 Output: Sum=0, Cout=1
 
-📦 Dependencies
+Dependencies
+The project requires the following:
 
-Python 3.8+
+Python: Version 3.8 or later
+NumPy: For numerical computations and matrix operations
 
-NumPy
-
-Install dependencies with:
-
+Install dependencies using:
 pip install numpy
 
-🎯 Future Improvements
+Future Enhancements
 
-Extend to 4-bit adders/subtractors using neural gates
+Extend to 4-bit adder and subtractor circuits using neural gates.
+Explore universal gate designs (e.g., NAND-only or NOR-only circuits).
+Integrate visualization of neural network architectures and training dynamics using Matplotlib.
 
-Explore universal gate designs (NAND-only / NOR-only circuits)
-
-Visualize networks & learning process with matplotlib
-
-🧑‍💻 Author
-
-Developed with ❤️ for learning how neural networks can replicate classical logic circuits.
+Author
+Developed with a passion for bridging neural networks and classical digital logic circuits.
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
